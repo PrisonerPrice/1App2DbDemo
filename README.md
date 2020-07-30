@@ -24,13 +24,15 @@ Dive into the database container and create a test database:
 $ docker exec -it {db_container_name} bash
 `
 
+Now you are in the database container
+
 `
-> $ mysql -u root -p
+$ mysql -u root -p
 `
 
 After this command, you will be asked to enter the password
 
 `
-> $ Create database {your_database_name};
+$ Create database {your_database_name};
 `
 
