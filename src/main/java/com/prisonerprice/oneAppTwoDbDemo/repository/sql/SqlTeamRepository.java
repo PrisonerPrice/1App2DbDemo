@@ -4,4 +4,5 @@ import com.prisonerprice.oneAppTwoDbDemo.entity.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SqlTeamRepository extends JpaRepository<Team, Long> {
+    Team findTeamByTeamName(String teamName);
 }

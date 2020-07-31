@@ -1,5 +1,8 @@
 package com.prisonerprice.oneAppTwoDbDemo.entity;
 
+import org.bson.codecs.pojo.annotations.BsonIgnore;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 
 @Entity
@@ -77,7 +80,7 @@ public class User {
                 "mysqlId=" + mysqlId +
                 ", mangoId='" + mangoId + '\'' +
                 ", name='" + name + '\'' +
-                ", team=" + team.getTeamName() +
+                ", team=" + (team == null ? "null" : team.getTeamName()) +
                 '}';
     }
 }

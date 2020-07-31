@@ -1,10 +1,13 @@
 package com.prisonerprice.oneAppTwoDbDemo.entity;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Document(collection = "Teams")
 @Table(name = "teams")
 public class Team {
 
@@ -20,7 +23,7 @@ public class Team {
     @Column(name = "team_name")
     private String teamName;
 
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<User> users = new ArrayList<>();
 
     public Team() {
